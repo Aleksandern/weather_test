@@ -63,8 +63,8 @@ class Weather extends React.Component <null, StateTypes> {
 
   renderSwipeFooter() {
     const { isCelsius } = this.state;
-    const styleButtonCelsius = [styles.degreeButton];
-    const styleButtonFahrenheit = [styles.degreeButton];
+    const styleButtonCelsius: any[] = [styles.degreeButton];
+    const styleButtonFahrenheit: any[] = [styles.degreeButton];
     const styleIconCelsius = [styles.degreeButtonIcon];
     const styleIconFahrenheit = [styles.degreeButtonIcon];
 
@@ -168,7 +168,6 @@ class Weather extends React.Component <null, StateTypes> {
   }
 
   render() {
-
     return (
       <View style={[sg.flex]}>
         {this.renderActivityIndicator()}

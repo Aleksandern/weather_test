@@ -13,6 +13,6 @@ type NamedStyles<T> = {
   [P in keyof T]: Style;
 };
 
-export function createStyle<T extends NamedStyles<T>>(styles: NamedStyles<T>) {
+export function createStyle<T extends NamedStyles<T>>(styles: T | NamedStyles<T>) {
   return StyleSheet.create(styles);
 }

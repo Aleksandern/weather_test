@@ -35,7 +35,7 @@ const WeatherItem = ({ item, isCelsius, isModal = false }: PropTypes) => {
 
   const todayWind = `${wind_cdir} ${Math.round(wind_spd)} mph`;
 
-  const styleWeatherHeader = [styles.weatherHeader];
+  const styleWeatherHeader: any[] = [styles.weatherHeader];
   const styleTextHeader = [];
 
   if (isModal) {
@@ -73,7 +73,12 @@ const WeatherItem = ({ item, isCelsius, isModal = false }: PropTypes) => {
 
       </View>
       <View style={styles.weatherDaysContainer}>
-        {data.map(({ datetime, min_temp, max_temp, weather }: {[key: string]: any}) => (
+        {data.map(({
+          datetime,
+          min_temp,
+          max_temp,
+          weather,
+        }: {[key: string]: any}) => (
           <View key={datetime} style={styles.weatherDaysItem}>
             <Text style={[sg.flex, sg.fS16]}>{moment(datetime).format('dddd')}</Text>
             <View style={[sg.flex]}>
